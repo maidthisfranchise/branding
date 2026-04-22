@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form inputs</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  label { font-family: var(--font-ui); font-weight: 700; font-size: 12px; letter-spacing: 0.04em; color: var(--fg-secondary); text-transform: uppercase; }
+  .input, .select {
+    font-family: var(--font-body); font-size: 14px; color: var(--fg-primary);
+    padding: 11px 14px; border-radius: 10px; border: 1.5px solid var(--border-default);
+    background: var(--mt-white); outline: none;
+  }
+  .input:focus { border-color: var(--mt-ocean); box-shadow: 0 0 0 3px rgba(12,133,194,0.18); }
+  .hint { font-family: var(--font-body); font-size: 12px; color: var(--fg-tertiary); }
+  .pill { display: inline-flex; gap: 6px; align-items: center;
+    font-family: var(--font-ui); font-size: 12px; font-weight: 700;
+    padding: 6px 12px; border-radius: 999px; background: var(--mt-teal-100); color: var(--mt-ocean-700); }
+  .checkbox { display: flex; align-items: center; gap: 8px; font-family: var(--font-body); font-size: 13px; color: var(--fg-primary); }
+  .checkbox .box { width: 18px; height: 18px; border-radius: 5px; border: 2px solid var(--mt-navy); background: var(--mt-green); display: flex; align-items: center; justify-content: center; color: white; font-weight: 900; font-size: 11px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid">
+    <div class="field">
+      <label>Full name</label>
+      <input class="input" value="Alex Rivera">
+    </div>
+    <div class="field">
+      <label>ZIP</label>
+      <input class="input" value="90210" style="border-color:var(--mt-ocean); box-shadow:0 0 0 3px rgba(12,133,194,0.18)">
+      <div class="hint">We match you to a local franchisee</div>
+    </div>
+    <div class="field">
+      <label>Service</label>
+      <select class="select"><option>Deep clean · 3 bed / 2 bath</option></select>
+    </div>
+    <div class="field" style="justify-content:flex-end">
+      <div class="checkbox"><div class="box">✓</div> 100% Happiness Guarantee</div>
+      <span class="pill">● Tuesday openings</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

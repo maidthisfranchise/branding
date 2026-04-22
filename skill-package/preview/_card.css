@@ -1,0 +1,25 @@
+/* Card frame used by every preview card.
+   Cards are ~700 wide; keep margins tight. */
+@import url('../colors_and_type.css');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-page);
+  color: var(--fg-primary);
+  font-family: var(--font-body);
+}
+
+.card {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 100%;
+  padding: 24px 28px;
+  background: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row { display: flex; gap: 12px; align-items: stretch; }
+.col { display: flex; flex-direction: column; gap: 12px; }

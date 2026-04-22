@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Buttons</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .btn {
+    font-family: var(--font-display); font-weight: 700; font-size: 14px;
+    letter-spacing: 0.02em;
+    border-radius: 999px; padding: 12px 22px;
+    border: 0; cursor: pointer;
+    transition: transform var(--dur-fast) var(--ease-standard), box-shadow var(--dur-base) var(--ease-standard), background var(--dur-fast);
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn.primary { background: var(--mt-ocean); color: white; box-shadow: 0 10px 22px rgba(12,133,194,0.30); }
+  .btn.primary:hover { background: #0974ab; }
+  .btn.secondary { background: var(--mt-navy); color: white; }
+  .btn.tertiary { background: transparent; color: var(--mt-navy); border: 2px solid var(--mt-navy); padding: 10px 20px; }
+  .btn.accent { background: var(--mt-yellow); color: var(--mt-navy); }
+  .btn.ghost { background: transparent; color: var(--mt-ocean); padding: 10px 14px; }
+  .btn.ghost:hover { background: var(--mt-teal-100); }
+  .btn.sm { font-size: 12px; padding: 8px 14px; }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .label { font-family: var(--font-ui); font-size: 10px; letter-spacing: var(--ls-caps); text-transform: uppercase; color: var(--fg-tertiary); width: 74px; }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="row"><div class="label">Primary</div>
+    <button class="btn primary">Book a clean →</button>
+    <button class="btn primary sm">Get quote</button>
+  </div>
+  <div class="row"><div class="label">Support</div>
+    <button class="btn secondary">Meet the team</button>
+    <button class="btn tertiary">Learn more</button>
+    <button class="btn accent">See pricing</button>
+  </div>
+  <div class="row"><div class="label">Ghost</div>
+    <button class="btn ghost">View details</button>
+    <button class="btn ghost sm">Cancel</button>
+  </div>
+</div>
+</body>
+</html>

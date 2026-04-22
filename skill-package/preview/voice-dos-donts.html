@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Voice — before & after</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; flex: 1; }
+  .box { padding: 14px 16px; border-radius: 12px; display: flex; flex-direction: column; gap: 6px; }
+  .bad { background: #FBE6E7; }
+  .good { background: var(--mt-teal-100); }
+  .tag { font-family: var(--font-ui); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+  .bad .tag { color: #B81E22; }
+  .good .tag { color: var(--mt-ocean-700); }
+  .line { font-family: var(--font-display); font-weight: 700; font-size: 16px; line-height: 1.25; color: var(--fg-primary); text-wrap: pretty; }
+  .bad .line { text-decoration: line-through; color: #5a2326; font-weight: 600; font-family: var(--font-body); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="grid">
+    <div class="box bad">
+      <div class="tag">✗ Never say</div>
+      <div class="line">"Affordable, reliable, professional cleaning services."</div>
+    </div>
+    <div class="box good">
+      <div class="tag">✓ Say instead</div>
+      <div class="line">"Real humans. Real clean. No clipboard energy."</div>
+    </div>
+    <div class="box bad">
+      <div class="tag">✗ Generic</div>
+      <div class="line">"We care about your home."</div>
+    </div>
+    <div class="box good">
+      <div class="tag">✓ On-brand</div>
+      <div class="line">"Your home, handled. (Yes, even the grout.)"</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

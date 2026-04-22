@@ -1,0 +1,228 @@
+/* =========================================================================
+   MaidThis — Colors & Type
+   Core design tokens. Import this first.
+   ========================================================================= */
+
+/* -- Google Fonts (substitutes until official font files are provided) ----
+   Montserrat: primary display + UI (extra-bold for headlines)
+   Open Sans: body copy alternate
+   ----------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  /* ---------- Brand — Primary ---------- */
+  --mt-teal:        #5AB3C9;  /* Teal Blue — core brand color */
+  --mt-ocean:       #0C85C2;  /* Ocean Blue — vibrant, energetic */
+
+  /* ---------- Brand — Secondary ---------- */
+  --mt-aqua:        #A7DBE7;  /* Aqua Mist — soft fills */
+
+  /* ---------- Brand — Neutrals ---------- */
+  --mt-navy:        #2C3E50;  /* Charcoal Navy — text + headers */
+  --mt-gray:        #E6F1F4;  /* Cool Gray — bg + secondary fill */
+  --mt-white:       #FFFFFF;
+  --mt-black:       #0F1821;
+
+  /* ---------- Brand — Accents ---------- */
+  --mt-green:       #7CCA5B;  /* Fresh Green */
+  --mt-yellow:      #FFB600;  /* Bold Yellow */
+
+  /* ---------- Tints & shades (derived) ---------- */
+  --mt-teal-100:    #EAF6F9;
+  --mt-teal-200:    #C6E6ED;
+  --mt-teal-300:    #9CD3DE;
+  --mt-teal-400:    #7AC3D2;
+  --mt-teal-500:    #5AB3C9;
+  --mt-teal-600:    #3E95AC;
+  --mt-teal-700:    #2B7387;
+  --mt-teal-800:    #1E5464;
+
+  --mt-ocean-100:   #E1F1FA;
+  --mt-ocean-200:   #A9D6EE;
+  --mt-ocean-300:   #6EB8DE;
+  --mt-ocean-500:   #0C85C2;
+  --mt-ocean-700:   #085E8A;
+
+  --mt-navy-100:    #E9ECF0;
+  --mt-navy-300:    #8A9AAB;
+  --mt-navy-500:    #2C3E50;
+  --mt-navy-700:    #1C2A38;
+
+  /* ---------- Dominant trio (teal / white / black) ---------- */
+  /* Colors-primary was revised: these three are the dominant palette.
+     Ocean + Aqua Mist step down to backup/support roles. */
+
+  /* ---------- Semantic — Surface ---------- */
+  --bg-page:        var(--mt-white);
+  --bg-muted:       var(--mt-gray);
+  --bg-soft:        #F6FAFB;
+  --bg-inverse:     var(--mt-black);
+  --bg-brand:       var(--mt-teal);
+  --bg-brand-alt:   var(--mt-ocean);
+  --bg-accent-mist: var(--mt-aqua);
+
+  /* ---------- Semantic — Foreground ---------- */
+  --fg-primary:     var(--mt-navy);       /* body + headlines on light */
+  --fg-secondary:   #546778;              /* muted body */
+  --fg-tertiary:    #8A9AAB;              /* captions, labels */
+  --fg-inverse:     var(--mt-white);      /* on dark + brand bgs */
+  --fg-brand:       var(--mt-ocean);      /* links / emphasis */
+  --fg-on-brand:    var(--mt-white);
+
+  /* ---------- Semantic — Border ---------- */
+  --border-subtle:  #DCE7EC;
+  --border-default: #C6D4DB;
+  --border-strong:  var(--mt-navy);
+
+  /* ---------- Semantic — State ---------- */
+  --state-success:  var(--mt-green);
+  --state-warning:  var(--mt-yellow);
+  --state-info:     var(--mt-ocean);
+  --state-danger:   #E5484D;
+
+  /* ---------- Type — Families ---------- */
+  --font-display:   'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:      'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-ui:        'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:      'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---------- Type — Weights ---------- */
+  --fw-regular:     400;
+  --fw-medium:      500;
+  --fw-semibold:    600;
+  --fw-bold:        700;
+  --fw-extrabold:   800;
+  --fw-black:       900;
+
+  /* ---------- Type — Scale (rem) ---------- */
+  --fs-12: 0.75rem;
+  --fs-14: 0.875rem;
+  --fs-16: 1rem;
+  --fs-18: 1.125rem;
+  --fs-20: 1.25rem;
+  --fs-24: 1.5rem;
+  --fs-30: 1.875rem;
+  --fs-36: 2.25rem;
+  --fs-48: 3rem;
+  --fs-60: 3.75rem;
+  --fs-72: 4.5rem;
+  --fs-96: 6rem;
+
+  /* ---------- Line heights ---------- */
+  --lh-tight:       1.05;
+  --lh-snug:        1.2;
+  --lh-normal:      1.45;
+  --lh-relaxed:     1.6;
+
+  /* ---------- Letter spacing ---------- */
+  --ls-tight:      -0.02em;
+  --ls-snug:       -0.01em;
+  --ls-normal:      0;
+  --ls-wide:        0.04em;
+  --ls-caps:        0.08em;
+
+  /* ---------- Spacing scale (4px base) ---------- */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+  --sp-12: 48px;
+  --sp-16: 64px;
+  --sp-20: 80px;
+  --sp-24: 96px;
+  --sp-32: 128px;
+
+  /* ---------- Radii ---------- */
+  --r-sm:   6px;
+  --r-md:   10px;
+  --r-lg:   14px;
+  --r-xl:   20px;
+  --r-2xl:  28px;
+  --r-pill: 999px;
+
+  /* ---------- Shadow / elevation ---------- */
+  --shadow-xs: 0 1px 2px rgba(44, 62, 80, 0.06);
+  --shadow-sm: 0 2px 6px rgba(44, 62, 80, 0.08);
+  --shadow-md: 0 8px 24px rgba(44, 62, 80, 0.10);
+  --shadow-lg: 0 20px 48px rgba(44, 62, 80, 0.14);
+  --shadow-brand: 0 14px 30px rgba(12, 133, 194, 0.22);
+  --shadow-inner: inset 0 1px 2px rgba(44, 62, 80, 0.06);
+
+  /* ---------- Motion ---------- */
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast:      120ms;
+  --dur-base:      200ms;
+  --dur-slow:      360ms;
+}
+
+/* =========================================================================
+   Semantic typography — apply as classes or base element styles
+   ========================================================================= */
+
+html { color-scheme: light; }
+
+body {
+  font-family: var(--font-body);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-16);
+  line-height: var(--lh-relaxed);
+  color: var(--fg-primary);
+  background: var(--bg-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Display — hero & section headlines. Montserrat ExtraBold. */
+.mt-display-1,
+.mt-display-2,
+.mt-h1, .mt-h2, .mt-h3, .mt-h4 {
+  font-family: var(--font-display);
+  color: var(--fg-primary);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+  text-wrap: balance;
+}
+.mt-display-1 { font-size: clamp(3rem, 7vw, 6rem); font-weight: var(--fw-extrabold); }
+.mt-display-2 { font-size: clamp(2.25rem, 5vw, 4.5rem); font-weight: var(--fw-extrabold); }
+
+.mt-h1 { font-size: var(--fs-48); font-weight: var(--fw-extrabold); }
+.mt-h2 { font-size: var(--fs-36); font-weight: var(--fw-extrabold); }
+.mt-h3 { font-size: var(--fs-24); font-weight: var(--fw-bold); line-height: var(--lh-snug); letter-spacing: var(--ls-snug); }
+.mt-h4 { font-size: var(--fs-20); font-weight: var(--fw-bold); line-height: var(--lh-snug); letter-spacing: var(--ls-snug); }
+
+/* Eyebrow — small caps label */
+.mt-eyebrow {
+  font-family: var(--font-ui);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-12);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--fg-brand);
+}
+
+/* Body */
+.mt-lead { font-family: var(--font-body); font-size: var(--fs-20); line-height: var(--lh-relaxed); color: var(--fg-secondary); text-wrap: pretty; }
+.mt-p    { font-family: var(--font-body); font-size: var(--fs-16); line-height: var(--lh-relaxed); color: var(--fg-primary); text-wrap: pretty; }
+.mt-small{ font-family: var(--font-body); font-size: var(--fs-14); line-height: var(--lh-normal); color: var(--fg-secondary); }
+.mt-caption { font-family: var(--font-ui); font-size: var(--fs-12); line-height: var(--lh-normal); color: var(--fg-tertiary); letter-spacing: var(--ls-wide); }
+
+/* Utility */
+.mt-mono   { font-family: var(--font-mono); }
+.mt-accent { color: var(--fg-brand); }
+.mt-mute   { color: var(--fg-secondary); }
+.mt-caps   { text-transform: uppercase; letter-spacing: var(--ls-caps); }
+
+/* Link */
+a.mt-link {
+  color: var(--fg-brand);
+  text-decoration: none;
+  font-weight: var(--fw-semibold);
+  border-bottom: 1.5px solid currentColor;
+  transition: opacity var(--dur-fast) var(--ease-standard);
+}
+a.mt-link:hover { opacity: 0.75; }

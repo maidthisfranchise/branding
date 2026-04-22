@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Logo — Clearspace & don'ts</title>
+<link rel="stylesheet" href="_card.css">
+<style>
+  .stage { display: grid; grid-template-columns: 1.1fr 1fr; gap: 14px; flex: 1; }
+  .panel { position: relative; border-radius: 12px; padding: 16px; background: var(--mt-white); border: 1px solid var(--border-subtle);
+           display: flex; align-items: center; justify-content: center; }
+  .clearspace { position: relative; padding: 28px; }
+  .clearspace::before {
+    content: '';
+    position: absolute; inset: 6px;
+    border: 1.5px dashed var(--mt-teal);
+    border-radius: 8px;
+  }
+  .clearspace img { position: relative; max-height: 90px; }
+  .donts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .dont {
+    border-radius: 10px;
+    border: 1px solid var(--border-subtle);
+    padding: 10px; min-height: 70px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+  }
+  .dont img { max-height: 40px; }
+  .dont::after {
+    content: '✕';
+    position: absolute; top: 4px; right: 6px;
+    font-weight: 900; color: var(--state-danger); font-size: 13px;
+    font-family: var(--font-ui);
+  }
+  .dont.sq img { transform: scaleX(1.6); }
+  .dont.cl   { background: linear-gradient(120deg, #5AB3C9, #FFB600); }
+  .dont.sh img { filter: drop-shadow(0 6px 6px rgba(0,0,0,0.55)); }
+  .dont.rc img { filter: hue-rotate(90deg); }
+  .note {
+    font-family: var(--font-ui); font-size: 10px; letter-spacing: var(--ls-caps);
+    text-transform: uppercase; color: var(--fg-tertiary);
+    position: absolute; bottom: 6px; left: 8px;
+  }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="stage">
+    <div class="panel clearspace">
+      <img src="../assets/logos/maidthis-primary.png">
+      <div class="note">Clearspace = height of "M"</div>
+    </div>
+    <div class="donts">
+      <div class="dont sq"><img src="../assets/logos/maidthis-primary.png"><div class="note">No stretching</div></div>
+      <div class="dont cl"><img src="../assets/logos/maidthis-primary.png"><div class="note">No busy bg</div></div>
+      <div class="dont sh"><img src="../assets/logos/maidthis-primary.png"><div class="note">No shadows</div></div>
+      <div class="dont rc"><img src="../assets/logos/maidthis-primary.png"><div class="note">No recoloring</div></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

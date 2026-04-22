@@ -1,491 +1,110 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MaidThis — Franchisee Brand Hub</title>
-<link rel="stylesheet" href="colors_and_type.css">
-<style>
-  * { box-sizing: border-box; }
-  html, body { margin:0; padding:0; background: var(--mt-white); color: var(--mt-navy); }
-  body { font-family: var(--font-body); }
-  .container { max-width: 1100px; margin: 0 auto; padding: 0 32px; }
 
-  /* ---------- Nav ---------- */
-  header.nav { position:sticky; top:0; z-index:40; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-bottom:1px solid var(--border-subtle); }
-  .nav-inner { display:flex; justify-content:space-between; align-items:center; padding:14px 32px; max-width:1100px; margin:0 auto; }
-  .nav-inner img { height: 34px; }
-  .nav-links { display:flex; gap:28px; }
-  .nav-links a { font-family: var(--font-ui); font-size:14px; font-weight:600; color: var(--mt-navy); text-decoration:none; }
+Generate
+Assets
+Colors
+Voice
+Full skill
 
-  /* ---------- Hero ---------- */
-  .hero { padding: 72px 0 56px; background: linear-gradient(180deg, #F6FAFB 0%, white 100%); position:relative; overflow:hidden; }
-  .hero .eyebrow { font-family: var(--font-ui); font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color: var(--mt-ocean); }
-  .hero h1 { font-family: var(--font-display); font-weight:800; font-size: clamp(42px, 6vw, 72px); letter-spacing:-0.02em; line-height:1.02; margin:10px 0 16px; text-wrap: balance; color: var(--mt-navy); }
-  .hero h1 .t { color: var(--mt-ocean); }
-  .hero p.lead { font-size:18px; line-height:1.55; color: var(--fg-secondary); max-width: 640px; text-wrap: pretty; }
-  .spark { position:absolute; opacity:0.5; pointer-events:none; }
-  .spark-1 { top: 40px; right: 8%; width: 80px; fill: var(--mt-teal); }
-  .spark-2 { bottom: 30px; right: 22%; width: 40px; fill: var(--mt-yellow); }
 
-  /* ---------- Sections ---------- */
-  section { padding: 64px 0; border-bottom: 1px solid var(--border-subtle); }
-  section h2 { font-family: var(--font-display); font-weight:800; font-size: 36px; letter-spacing:-0.02em; line-height:1.1; margin:0 0 10px; color: var(--mt-navy); }
-  section .kicker { font-family: var(--font-ui); font-size:12px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color: var(--mt-ocean); margin-bottom: 6px; }
-  section p.sub { font-size:16px; color: var(--fg-secondary); max-width:680px; margin: 0 0 32px; text-wrap: pretty; }
+FRANCHISEE BRAND HUB
+Make on-brand marketing. In about 60 seconds.
+Logos, colors, voice, templates — everything you need to design flyers, social posts, and local promos that actually look like MaidThis. No designer. No Canva wrestling match. (Unless you want one.)
+INSTANT GENERATOR
+Tell us what you need. We'll make it.
+Fill in the blanks, hit generate. You'll get a ready-to-use HTML design with your market details baked in. Screenshot it, print it, post it.
 
-  /* ---------- Download grid ---------- */
-  .dl-grid { display:grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
-  .dl { background: white; border: 1px solid var(--border-subtle); border-radius: 16px; padding: 16px; display:flex; flex-direction:column; gap:10px; }
-  .dl .thumb { background: var(--mt-gray); border-radius: 10px; aspect-ratio: 4/3; display:flex; align-items:center; justify-content:center; padding:20px; }
-  .dl .thumb.dark { background: var(--mt-navy); }
-  .dl .thumb img { max-width:100%; max-height:100%; }
-  .dl .t { font-family: var(--font-display); font-weight:800; font-size: 15px; color: var(--mt-navy); }
-  .dl .s { font-size: 12px; color: var(--fg-tertiary); }
-  .dl a.btn { margin-top:auto; font-family: var(--font-display); font-weight:700; font-size: 12px; color: white; background: var(--mt-navy); padding:9px 14px; border-radius: 999px; text-decoration:none; text-align:center; }
-  @media (max-width: 800px) { .dl-grid { grid-template-columns: repeat(2, 1fr); } }
+ASSET TYPE
+            Instagram / Social square (1:1)
+            Instagram Story (9:16)
+            Flyer (8.5 × 11)
+            Door hanger (tall skinny)
+            Email header banner
+            Ad headlines (Google/Meta copy only)
+          
+CAMPAIGN / PROMO
 
-  /* ---------- Color grid ---------- */
-  .c-grid { display:grid; grid-template-columns: repeat(5, 1fr); gap:10px; }
-  .c { border-radius:12px; padding:14px; min-height: 110px; display:flex; flex-direction:column; justify-content:space-between; cursor: pointer; transition: transform 120ms ease; }
-  .c:hover { transform: translateY(-2px); }
-  .c .n { font-family: var(--font-display); font-weight:800; font-size:13px; line-height:1.1; }
-  .c .h { font-family: var(--font-ui); font-size:11px; font-weight:700; letter-spacing:0.04em; opacity:0.9; }
-  .c.light { color: var(--mt-navy); border: 1px solid var(--border-subtle); }
-  .c.dark { color: white; }
-  .copied { font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; opacity:0; transition: opacity 200ms; }
-  .c.copied-on .copied { opacity: 1; }
-  @media (max-width: 800px) { .c-grid { grid-template-columns: repeat(3, 1fr); } }
+MARKET / CITY
 
-  /* ---------- Generator ---------- */
-  .gen-wrap { background: var(--mt-navy); color: white; border-radius: 28px; padding: 40px; margin-top: 32px; position: relative; overflow: hidden; }
-  .gen-wrap .spark-g1 { position:absolute; top:30px; right:40px; width:70px; fill: var(--mt-teal); opacity: 0.7; }
-  .gen-form { display:grid; grid-template-columns: 1fr 1fr; gap:16px; }
-  .gen-field { display:flex; flex-direction:column; gap:6px; }
-  .gen-field.full { grid-column: 1 / -1; }
-  .gen-field label { font-family: var(--font-ui); font-size:11px; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; color: var(--mt-teal); }
-  .gen-field input, .gen-field select, .gen-field textarea {
-    font-family: var(--font-body); font-size:14px; color: white;
-    background: rgba(255,255,255,0.08); border: 1.5px solid rgba(255,255,255,0.15);
-    padding: 11px 14px; border-radius: 10px; outline: none;
-  }
-  .gen-field input:focus, .gen-field select:focus, .gen-field textarea:focus { border-color: var(--mt-teal); box-shadow: 0 0 0 3px rgba(90,179,201,0.25); }
-  .gen-field textarea { resize: vertical; min-height: 72px; }
-  .gen-field select { appearance:none; background-image: linear-gradient(45deg, transparent 50%, var(--mt-teal) 50%), linear-gradient(-45deg, transparent 50%, var(--mt-teal) 50%); background-position: calc(100% - 18px) 50%, calc(100% - 12px) 50%; background-size: 6px 6px; background-repeat: no-repeat; padding-right: 36px; }
-  .gen-field select option { background: var(--mt-navy); color:white; }
-  .gen-btn {
-    font-family: var(--font-display); font-weight: 800; font-size: 14px;
-    color: var(--mt-navy); background: var(--mt-yellow); border: 0;
-    padding: 14px 26px; border-radius: 999px; cursor: pointer;
-    box-shadow: 0 14px 30px rgba(255,182,0,0.25);
-    transition: transform 120ms ease;
-  }
-  .gen-btn:hover { transform: translateY(-1px); }
-  .gen-btn:disabled { opacity: 0.6; cursor: wait; }
+PHONE OR WEBSITE
 
-  /* ---------- Output preview ---------- */
-  .out { margin-top: 20px; border-radius: 20px; overflow: hidden; background: white; min-height: 300px; border: 1px solid rgba(255,255,255,0.1); position:relative; }
-  .out-empty { padding: 60px 20px; text-align:center; color: var(--fg-tertiary); font-family: var(--font-ui); font-size: 13px; }
-  .out iframe { width: 100%; border: 0; display:block; }
-  .out-actions { display:flex; gap:10px; padding: 14px; background: var(--mt-gray); border-top: 1px solid var(--border-subtle); }
-  .out-actions button { font-family: var(--font-display); font-weight:700; font-size:12px; padding: 9px 14px; border-radius: 999px; border: 1.5px solid var(--mt-navy); background: white; color: var(--mt-navy); cursor: pointer; }
-  .out-actions button.pri { background: var(--mt-navy); color: white; }
-  .loading { display:flex; align-items:center; justify-content:center; min-height:260px; gap: 10px; color: var(--fg-secondary); font-family: var(--font-ui); font-weight: 600; }
-  .spinner { width: 20px; height: 20px; border-radius: 50%; border: 3px solid var(--border-subtle); border-top-color: var(--mt-ocean); animation: spin 800ms linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* ---------- Voice cheat sheet ---------- */
-  .voice-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .voice-col { border-radius: 16px; padding: 20px; }
-  .voice-col.no { background: #FBE6E7; }
-  .voice-col.yes { background: var(--mt-teal-100); }
-  .voice-col h3 { font-family: var(--font-display); font-weight: 800; font-size: 16px; margin: 0 0 10px; letter-spacing:0.04em; text-transform:uppercase; }
-  .voice-col.no h3 { color: #B81E22; }
-  .voice-col.yes h3 { color: var(--mt-ocean-700); }
-  .voice-col ul { margin:0; padding-left: 18px; font-size: 14px; line-height: 1.5; color: var(--mt-navy); }
-  .voice-col.no ul li { text-decoration: line-through; color: #5a2326; }
-  @media (max-width: 700px) { .voice-grid, .gen-form { grid-template-columns: 1fr; } }
-
-  /* ---------- Skill CTA ---------- */
-  .skill { background: var(--mt-teal-100); padding: 48px; border-radius: 24px; display:grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items:center; }
-  .skill h3 { font-family: var(--font-display); font-weight:800; font-size: 28px; letter-spacing:-0.01em; line-height:1.1; margin:0 0 10px; }
-  .skill p { font-size: 15px; color: var(--fg-secondary); margin: 0 0 16px; }
-  .skill .pri { display:inline-block; font-family: var(--font-display); font-weight:800; font-size: 14px; color: white; background: var(--mt-ocean); padding: 14px 22px; border-radius: 999px; text-decoration:none; box-shadow: 0 14px 30px rgba(12,133,194,0.3); }
-  .skill-badge { background: var(--mt-navy); color: white; padding: 28px; border-radius: 20px; display:flex; flex-direction:column; gap:8px; align-items:flex-start; }
-  .skill-badge .lbl { font-family: var(--font-ui); font-size:10px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color: var(--mt-teal); }
-  .skill-badge .title { font-family: var(--font-display); font-weight:800; font-size: 18px; line-height: 1.1; }
-  .skill-badge .sub { font-size: 12px; color: rgba(255,255,255,0.65); }
-  @media (max-width: 800px) { .skill { grid-template-columns: 1fr; padding: 28px; } }
-
-  /* ---------- Footer ---------- */
-  footer { background: var(--mt-navy); color: white; padding: 48px 0 32px; text-align:center; }
-  footer img { height: 40px; filter: brightness(0) invert(1); margin-bottom: 14px; }
-  footer p { color: rgba(255,255,255,0.6); font-size: 13px; }
-
-  .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); background: var(--mt-navy); color: white; padding: 12px 20px; border-radius: 999px; font-family: var(--font-display); font-weight: 700; font-size: 13px; opacity: 0; transition: all 200ms; pointer-events: none; z-index: 100; box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-  .toast.on { opacity: 1; transform: translateX(-50%) translateY(0); }
-</style>
-</head>
-<body>
-
-<!-- NAV -->
-<header class="nav">
-  <div class="nav-inner">
-    <img src="assets/logos/maidthis-primary.png" alt="MaidThis">
-    <nav class="nav-links">
-      <a href="#generate">Generate</a>
-      <a href="#downloads">Assets</a>
-      <a href="#colors">Colors</a>
-      <a href="#voice">Voice</a>
-      <a href="#skill">Full skill</a>
-    </nav>
-  </div>
-</header>
-
-<!-- HERO -->
-<section class="hero" style="border-bottom: 0;">
-  <svg class="spark spark-1" viewBox="0 0 24 24"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
-  <svg class="spark spark-2" viewBox="0 0 24 24"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
-  <div class="container">
-    <div class="eyebrow">Franchisee Brand Hub</div>
-    <h1>Make on-brand marketing.<br/><span class="t">In about 60 seconds.</span></h1>
-    <p class="lead">Logos, colors, voice, templates — everything you need to design flyers, social posts, and local promos that actually look like MaidThis. No designer. No Canva wrestling match. (Unless you want one.)</p>
-  </div>
-</section>
-
-<!-- GENERATOR -->
-<section id="generate">
-  <div class="container">
-    <div class="kicker">Instant generator</div>
-    <h2>Tell us what you need. We'll make it.</h2>
-    <p class="sub">Fill in the blanks, hit generate. You'll get a ready-to-use HTML design with your market details baked in. Screenshot it, print it, post it.</p>
-
-    <div class="gen-wrap">
-      <svg class="spark-g1" viewBox="0 0 24 24"><path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"/></svg>
-      <div class="gen-form">
-        <div class="gen-field">
-          <label>Asset type</label>
-          <select id="f-type">
-            <option value="social_square">Instagram / Social square (1:1)</option>
-            <option value="social_story">Instagram Story (9:16)</option>
-            <option value="flyer">Flyer (8.5 × 11)</option>
-            <option value="door_hanger">Door hanger (tall skinny)</option>
-            <option value="email_header">Email header banner</option>
-            <option value="ad_headline">Ad headlines (Google/Meta copy only)</option>
-          </select>
-        </div>
-        <div class="gen-field">
-          <label>Campaign / promo</label>
-          <input id="f-promo" type="text" placeholder="$50 off your first Deep Clean">
-        </div>
-        <div class="gen-field">
-          <label>Market / city</label>
-          <input id="f-market" type="text" placeholder="Scottsdale, AZ">
-        </div>
-        <div class="gen-field">
-          <label>Phone or website</label>
-          <input id="f-contact" type="text" placeholder="(480) 555-0123 · maidthis.com/scottsdale">
-        </div>
-        <div class="gen-field full">
-          <label>Extra notes (optional)</label>
-          <textarea id="f-notes" placeholder="e.g. 'target STR hosts' · 'mention the happiness guarantee' · 'feels playful'"></textarea>
-        </div>
-        <div class="gen-field full" style="flex-direction:row; justify-content:space-between; align-items:center;">
-          <div style="font-size:12px; color: rgba(255,255,255,0.6);">Powered by Claude · uses the full MaidThis brand system</div>
-          <button class="gen-btn" id="gen-go">✨ Generate design →</button>
-        </div>
-      </div>
-
-      <div class="out" id="out">
-        <div class="out-empty">Your design will appear here. Give the form a whirl.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- DOWNLOADS -->
-<section id="downloads">
-  <div class="container">
-    <div class="kicker">Logo & asset downloads</div>
-    <h2>Grab what you need.</h2>
-    <p class="sub">Four logo variations. Transparent PNG. Use the right one for the surface.</p>
-
-    <div class="dl-grid">
-      <div class="dl">
-        <div class="thumb"><img src="assets/logos/maidthis-primary.png" alt=""></div>
-        <div class="t">Primary lockup</div>
-        <div class="s">Default · two-tone · most uses</div>
-        <a class="btn" href="assets/logos/maidthis-primary.png" download>Download PNG</a>
-      </div>
-      <div class="dl">
-        <div class="thumb"><img src="assets/logos/maidthis-black.png" alt=""></div>
-        <div class="t">Single-color</div>
-        <div class="s">Print, fax, black-and-white</div>
-        <a class="btn" href="assets/logos/maidthis-black.png" download>Download PNG</a>
-      </div>
-      <div class="dl">
-        <div class="thumb"><img src="assets/logos/maidthis-mark.png" alt=""></div>
-        <div class="t">House mark</div>
-        <div class="s">Favicons, avatars, tight spaces</div>
-        <a class="btn" href="assets/logos/maidthis-mark.png" download>Download PNG</a>
-      </div>
-      <div class="dl">
-        <div class="thumb dark"><img src="assets/logos/maidthis-t-mark.png" alt=""></div>
-        <div class="t">"T" monogram</div>
-        <div class="s">Tiny UI, social profile</div>
-        <a class="btn" href="assets/logos/maidthis-t-mark.png" download>Download PNG</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COLORS -->
-<section id="colors">
-  <div class="container">
-    <div class="kicker">Brand colors</div>
-    <h2>Click any chip to copy the hex.</h2>
-    <p class="sub">Dominant trio: teal · white · black. Ocean blue and aqua mist support. Green and yellow are accents — one at a time, never two.</p>
-
-    <div class="c-grid">
-      <div class="c dark"  data-hex="#5AB3C9" style="background:#5AB3C9"><span class="h">#5AB3C9</span><span class="n">Teal Blue</span><span class="copied">Copied</span></div>
-      <div class="c light" data-hex="#FFFFFF" style="background:#FFFFFF"><span class="h">#FFFFFF</span><span class="n">White</span><span class="copied">Copied</span></div>
-      <div class="c dark"  data-hex="#0F1821" style="background:#0F1821"><span class="h">#0F1821</span><span class="n">Black</span><span class="copied">Copied</span></div>
-      <div class="c dark"  data-hex="#0C85C2" style="background:#0C85C2"><span class="h">#0C85C2</span><span class="n">Ocean Blue</span><span class="copied">Copied</span></div>
-      <div class="c light" data-hex="#A7DBE7" style="background:#A7DBE7"><span class="h">#A7DBE7</span><span class="n">Aqua Mist</span><span class="copied">Copied</span></div>
-      <div class="c dark"  data-hex="#2C3E50" style="background:#2C3E50"><span class="h">#2C3E50</span><span class="n">Charcoal Navy</span><span class="copied">Copied</span></div>
-      <div class="c light" data-hex="#E6F1F4" style="background:#E6F1F4"><span class="h">#E6F1F4</span><span class="n">Cool Gray</span><span class="copied">Copied</span></div>
-      <div class="c dark"  data-hex="#7CCA5B" style="background:#7CCA5B"><span class="h">#7CCA5B</span><span class="n">Fresh Green</span><span class="copied">Copied</span></div>
-      <div class="c light" data-hex="#FFB600" style="background:#FFB600"><span class="h">#FFB600</span><span class="n">Bold Yellow</span><span class="copied">Copied</span></div>
-      <div class="c dark"  data-hex="#E5484D" style="background:#E5484D"><span class="h">#E5484D</span><span class="n">Alert Red</span><span class="copied">Copied</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- VOICE -->
-<section id="voice">
-  <div class="container">
-    <div class="kicker">Voice & tone</div>
-    <h2>70% comedian · 20% friend · 10% pro.</h2>
-    <p class="sub">If the line sounds like it came from any other cleaning company, rewrite it. Punchy, self-aware, human.</p>
-
-    <div class="voice-grid">
-      <div class="voice-col no">
-        <h3>✗ Never write this</h3>
-        <ul>
-          <li>"Affordable cleaning services."</li>
-          <li>"Reliable, professional cleaners."</li>
-          <li>"We care about your home."</li>
-          <li>"Our trained team of experts."</li>
-          <li>"At MaidThis, we believe…"</li>
-        </ul>
-      </div>
-      <div class="voice-col yes">
-        <h3>✓ Write this instead</h3>
-        <ul>
-          <li>"Real humans. Real clean. No clipboard energy."</li>
-          <li>"Sparkling floors. Zero sparkling effort."</li>
-          <li>"Your Airbnb, guest-ready in 3 hours."</li>
-          <li>"Your couch is judging you. Fix that."</li>
-          <li>"Nobody actually enjoys scrubbing grout."</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILL -->
-<section id="skill" style="border-bottom:0;">
-  <div class="container">
-    <div class="skill">
-      <div>
-        <div class="kicker">Power user mode</div>
-        <h3>Want to design anything, anytime?<br/>Install the full Claude skill.</h3>
-        <p>The generator above handles 80% of what most franchisees need. For everything else — recruitment ads, landing pages, full campaigns, anything wild — install the MaidThis Brand Design skill in your own Claude account and just chat.</p>
-        <a class="pri" href="https://github.com/maidthisfranchise/branding/releases/latest/download/maidthis-brand-design.zip" download>Download skill (.zip)</a>
-        <span style="margin-left: 10px; font-size:13px; color: var(--fg-tertiary);">Open <a href="HOW_TO_USE.md" style="color:var(--mt-ocean);">setup instructions</a></span>
-      </div>
-      <div class="skill-badge">
-        <div class="lbl">Claude skill</div>
-        <div class="title">maidthis-brand-design</div>
-        <div class="sub">Drop into any Claude project. Ask for anything. Stay on-brand.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <img src="assets/logos/maidthis-primary.png" alt="MaidThis">
-    <p>© 2026 MaidThis Franchise, Inc. · Questions? brand@maidthisfranchise.com</p>
-  </div>
-</footer>
-
-<div class="toast" id="toast">Copied hex</div>
-
-<script>
-// Point this at your Vercel deployment. Update after you deploy to Vercel.
-// Example: window.__BRAND_HUB_API__ = 'https://maidthis-brand.vercel.app';
-window.__BRAND_HUB_API__ = 'https://maidthis-brand.vercel.app';
-</script>
-<script>
-// ---------- Copy hex chips ----------
-document.querySelectorAll('.c').forEach(chip => {
-  chip.addEventListener('click', () => {
-    const hex = chip.dataset.hex;
-    navigator.clipboard?.writeText(hex);
-    chip.classList.add('copied-on');
-    showToast('Copied ' + hex);
-    setTimeout(() => chip.classList.remove('copied-on'), 900);
-  });
-});
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('on');
-  clearTimeout(showToast._t);
-  showToast._t = setTimeout(() => t.classList.remove('on'), 1400);
-}
-
-// ---------- Generator ----------
-const assetSpecs = {
-  social_square: { w: 1080, h: 1080, name: 'Instagram square (1:1)', previewH: 600 },
-  social_story:  { w: 1080, h: 1920, name: 'Instagram Story (9:16)', previewH: 700 },
-  flyer:         { w: 850,  h: 1100, name: 'Flyer 8.5 × 11',         previewH: 700 },
-  door_hanger:   { w: 450,  h: 1100, name: 'Door hanger',            previewH: 700 },
-  email_header:  { w: 1200, h: 400,  name: 'Email header banner',    previewH: 360 },
-  ad_headline:   { w: 900,  h: 900,  name: 'Ad headlines (copy)',    previewH: 520 }
-};
-
-const BRAND_SYSTEM = `
-MAIDTHIS BRAND SYSTEM — strict adherence required.
-
-VOICE: 70% stand-up comedian, 20% trusted friend, 10% professional.
-- Punchy, short sentences. Self-aware humor. Direct audience callouts ("Your couch is judging you.").
-- Parenthetical asides okay. Contractions okay.
-- Second person ("you/your") to customer. First person plural ("we") for brand.
-
-BANNED PHRASES (never use, never paraphrase): "affordable", "reliable", "professional cleaning services", "we care about your home", "trained team of professionals", "At MaidThis, we believe".
-
-DOMINANT PALETTE: Teal #5AB3C9 · White #FFFFFF · Black/Charcoal Navy #2C3E50 / #0F1821.
-BACKUP: Ocean Blue #0C85C2 · Aqua Mist #A7DBE7.
-ACCENTS (one at a time): Fresh Green #7CCA5B (CTAs/success) · Bold Yellow #FFB600 (promos, contrast on navy).
-
-TYPE: Montserrat (display/UI, 800 ExtraBold for headlines, tight tracking -0.02em). Open Sans (body). Load from Google Fonts.
-
-LAYOUT: Generous whitespace. Pill buttons (999px radius) — NEVER square CTAs. 16-20px card radius. 28px photo frames. Navy-tinted shadows, soft. No harsh drops, no gradients as decoration.
-
-LOGO: include <img src="assets/logos/maidthis-primary.png"> for light bg, or with filter:brightness(0) invert(1) for dark bg. Use assets/logos/maidthis-mark.png for tight spaces.
-
-OUTPUT: a single complete HTML document. Include full Google Fonts import, all styles inline in <style> tag. Use the exact hex codes above. Canvas size must match the requested dimensions. For print assets include a subtle reminder of size at the bottom in tiny caption.
-
-AVOID: stock-photo placeholders (use colored blocks / geometric fills / the sparkle motif instead). Emoji decoration. Trendy slang ("bestie", "no cap"). AI slop tropes (gradient backgrounds, rainbow borders, floating icons everywhere).
-`;
-
-async function generate() {
-  const type = document.getElementById('f-type').value;
-  const promo = document.getElementById('f-promo').value.trim();
-  const market = document.getElementById('f-market').value.trim();
-  const contact = document.getElementById('f-contact').value.trim();
-  const notes = document.getElementById('f-notes').value.trim();
-
-  if (!promo) {
-    showToast('Tell us what the campaign is about');
-    return;
-  }
-
-  const spec = assetSpecs[type];
-  const out = document.getElementById('out');
-  const btn = document.getElementById('gen-go');
-  btn.disabled = true;
-  btn.textContent = 'Generating...';
-  out.innerHTML = '<div class="loading"><div class="spinner"></div>Claude is designing your ' + spec.name.toLowerCase() + '…</div>';
-
-  const isCopyOnly = type === 'ad_headline';
-
-  const prompt = `${BRAND_SYSTEM}
-
-TASK: Produce a ${spec.name} for MaidThis Franchise.
-CAMPAIGN: "${promo}"
-MARKET: ${market || 'Generic'}
-CONTACT: ${contact || '(leave a placeholder)'}
-NOTES: ${notes || 'none'}
-
-${isCopyOnly ? `
-Output HTML showing 6 ad headline options + 3 description lines each, formatted as a styled list on an on-brand white background. Each headline max 30 chars, each description max 90 chars. Make them varied — some witty, some direct. Use Montserrat 800 for headlines, Open Sans for descriptions.
-` : `
-Canvas: ${spec.w} × ${spec.h}px. The <body> should be a single div with exactly these dimensions (use width: ${spec.w}px; height: ${spec.h}px; transform-origin: top left; and NO page padding/margin). Design a polished, on-brand ${spec.name.toLowerCase()} that includes:
-- The MaidThis logo (use assets/logos/maidthis-primary.png — relative path works since this HTML loads from the same domain)
-- A strong, on-voice headline about the campaign
-- Supporting line(s) with real MaidThis voice
-- The market name if provided
-- The contact info prominently
-- A clear CTA (pill button style)
-- Some visual interest — blocks of teal/navy, the sparkle motif (SVG path "M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z"), generous whitespace
-- Tiny caption at bottom with "${spec.w} × ${spec.h} · MaidThis" for print reference
-`}
-
-Return ONLY the complete HTML document. Start with <!doctype html>. No markdown, no code fences, no commentary.`;
-
-  try {
-    // Call our Vercel serverless function (proxies to Anthropic)
-    // When served from the same Vercel domain, a relative path works.
-    // Override with ?api=https://your-api.vercel.app if hosted elsewhere (e.g. GitHub Pages).
-    const apiBase = new URLSearchParams(location.search).get('api') || window.__BRAND_HUB_API__ || '';
-    const endpoint = apiBase ? apiBase.replace(/\/$/,'') + '/api/generate' : '/api/generate';
-
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ prompt })
-    });
-
-    if (!response.ok) {
-      const errData = await response.json().catch(() => ({}));
-      throw new Error(errData.error || ('HTTP ' + response.status));
-    }
-
-    const data = await response.json();
-    const html = data.text || '';
-    const cleaned = html.replace(/^```html\s*/i, '').replace(/```\s*$/, '').trim();
-
-    // Render into iframe
-    const iframe = document.createElement('iframe');
-    iframe.style.height = spec.previewH + 'px';
-    out.innerHTML = '';
-    out.appendChild(iframe);
-    iframe.srcdoc = cleaned;
-
-    // Actions
-    const actions = document.createElement('div');
-    actions.className = 'out-actions';
-    actions.innerHTML = `
-      <button class="pri" id="regen">↻ Regenerate</button>
-      <button id="dl">Download HTML</button>
-      <button id="copy">Copy HTML</button>
-    `;
-    out.appendChild(actions);
-    document.getElementById('regen').onclick = () => generate();
-    document.getElementById('dl').onclick = () => {
-      const blob = new Blob([cleaned], {type:'text/html'});
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'maidthis-' + type + '.html';
-      a.click();
-    };
-    document.getElementById('copy').onclick = () => {
-      navigator.clipboard.writeText(cleaned);
-      showToast('HTML copied to clipboard');
-    };
-  } catch (err) {
-    out.innerHTML = '<div class="out-empty">Something went sideways. Try again? <br/><span style="font-size:11px">' + (err.message || err) + '</span></div>';
-  } finally {
-    btn.disabled = false;
-    btn.innerHTML = '✨ Generate design →';
-  }
-}
-
-document.getElementById('gen-go').addEventListener('click', generate);
-</script>
-</body>
-</html>
+EXTRA NOTES (OPTIONAL)
+Powered by Claude · uses the full MaidThis brand system
+✨ Generate design →
+Your design will appear here. Give the form a whirl.
+LOGO & ASSET DOWNLOADS
+Grab what you need.
+Four logo variations. Transparent PNG. Use the right one for the surface.
+￼
+Primary lockup
+Default · two-tone · most uses
+Download PNG
+￼
+Single-color
+Print, fax, black-and-white
+Download PNG
+￼
+House mark
+Favicons, avatars, tight spaces
+Download PNG
+￼
+"T" monogram
+Tiny UI, social profile
+Download PNG
+BRAND COLORS
+Click any chip to copy the hex.
+Dominant trio: teal · white · black. Ocean blue and aqua mist support. Green and yellow are accents — one at a time, never two.
+#5AB3C9
+Teal Blue
+COPIED
+#FFFFFF
+White
+COPIED
+#0F1821
+Black
+COPIED
+#0C85C2
+Ocean Blue
+COPIED
+#A7DBE7
+Aqua Mist
+COPIED
+#2C3E50
+Charcoal Navy
+COPIED
+#E6F1F4
+Cool Gray
+COPIED
+#7CCA5B
+Fresh Green
+COPIED
+#FFB600
+Bold Yellow
+COPIED
+#E5484D
+Alert Red
+COPIED
+VOICE & TONE
+70% comedian · 20% friend · 10% pro.
+If the line sounds like it came from any other cleaning company, rewrite it. Punchy, self-aware, human.
+✗ NEVER WRITE THIS
+	•	"Affordable cleaning services."
+	•	"Reliable, professional cleaners."
+	•	"We care about your home."
+	•	"Our trained team of experts."
+	•	"At MaidThis, we believe…"
+✓ WRITE THIS INSTEAD
+	•	"Real humans. Real clean. No clipboard energy."
+	•	"Sparkling floors. Zero sparkling effort."
+	•	"Your Airbnb, guest-ready in 3 hours."
+	•	"Your couch is judging you. Fix that."
+	•	"Nobody actually enjoys scrubbing grout."
+POWER USER MODE
+Want to design anything, anytime? Install the full Claude skill.
+The generator above handles 80% of what most franchisees need. For everything else — recruitment ads, landing pages, full campaigns, anything wild — install the MaidThis Brand Design skill in your own Claude account and just chat.
+Download skill (.zip) Open setup instructions
+CLAUDE SKILL
+maidthis-brand-design
+Drop into any Claude project. Ask for anything. Stay on-brand.
+￼
+© 2026 MaidThis Franchise, Inc. · Questions? brand@maidthisfranchise.com
+Copied hex
